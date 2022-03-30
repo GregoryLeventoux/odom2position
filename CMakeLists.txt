@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(real_pose_viewer)
+project(odom2position)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -23,11 +23,11 @@ find_package(nav_msgs REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(real_pose_viewer src/real_pose_viewer.cpp)
-ament_target_dependencies(real_pose_viewer rclcpp geometry_msgs nav_msgs)
+add_executable(odom2position  src/real_pose_viewer.cpp)
+ament_target_dependencies(odom2position rclcpp geometry_msgs nav_msgs)
 
 install(TARGETS
-  real_pose_viewer
+  odom2position 
   DESTINATION lib/${PROJECT_NAME})
 
 
