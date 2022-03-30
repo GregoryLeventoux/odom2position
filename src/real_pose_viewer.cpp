@@ -9,10 +9,14 @@ class RealPoseViewer : public rclcpp::Node
     : Node("real_pose_viewer")
     {
 
-        subscriber = this->create_subscription<nav_msgs::msg::Odometry>(
-                    "/r2d2/odom", 10,  std::bind(&RealPoseViewer::callback, this, std::placeholders::_1));
+        std::string subscribed_topic_name = this->declare_parameter("subscribed_topic","none");
+        std::string published_topic_name = this->declare_parameter("published_topic","none");
 
-        publisher = this->create_publisher<geometry_msgs::msg::Point> ("/r2d2/real_position",10);
+
+        subscriber = this->create_subscription<nav_msgs::msg::Odometry>(
+                    subscribed_topic_name, 10,  std::bind(&RealPoseViewer::callback, this, std::placeholders::_1));
+
+        publisher = this->create_publisher<geometry_msgs::msg::Point> (published_topic_name,10);
 
 
     }
