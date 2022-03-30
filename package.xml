@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>odom2Position</name>
+  <name>odom_to_position</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="gregory.leventoux@hotmail.fr">gleventoux2020</maintainer>
